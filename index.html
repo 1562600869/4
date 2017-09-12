@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<script src="js/angular-1.4.6.min.js"></script>
+		<title></title>
+		<style type="text/css">
+		   *{
+		   	padding: 0;
+		   	margin: 0;
+		   	list-style: none;
+		   	font-family: "微软雅黑";
+		   }
+		</style>
+	</head>
+	<body>
+		<div ng-app="app1" ng-controller="ctl" style="background: yellow; width: 40%;text-align: center;">
+			 <h1>我的笔记</h1>
+		  <p><textarea rows="20" cols="50" ng-model="tea"></textarea></p>
+	      <p>剩余字数：<span>{{100-tea.length}}</span></p>
+	     <p>
+	       	<button ng-click="bc()">保存</button>
+	       	<button ng-click="qc()">清除</button>
+	       </p>
+		</div>
+		
+	</body>
+	<script>
+		var  app = angular.module("app1",[]);
+		app.controller("ctl",function($scope){
+			$scope.tea = "";
+			$scope.bc = function(){
+				alert("保存成功")
+			}
+			$scope.qc = function(){
+				$scope.tea = "";
+			}
+			
+			
+			
+		})
+	</script>
+</html>
